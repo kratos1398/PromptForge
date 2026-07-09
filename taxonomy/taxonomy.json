@@ -1,0 +1,350 @@
+{
+  "name": "Arcanum Prompt Injection Taxonomy (normalized)",
+  "source": "https://github.com/Arcanum-Sec/arc_pi_taxonomy",
+  "version_note": "Techniques and evasions synced from the Arcanum PI Taxonomy docs/data/taxonomy.json. Intents preserved from PromptForge's normalized set.",
+  "layers": {
+    "intents": {
+      "description": "What the attacker is trying to achieve (goals).",
+      "categories": [
+        {
+          "id": "business_integrity",
+          "name": "Business Integrity",
+          "subcategories": [
+            {
+              "id": "policy_overriding",
+              "name": "Policy Overriding",
+              "goals": [
+                "discount_coupon_codes",
+                "discount_waive_fees",
+                "discount_store_credit",
+                "returns",
+                "refunds",
+                "cancellations_without_authorization",
+                "loyalty_benefits_granting",
+                "reward_points_misuse",
+                "extended_warranties",
+                "add_unauthorized_users",
+                "trials_manipulation",
+                "avoid_subscription_billing",
+                "free_access_paid_features",
+                "shipping_fulfillment_perks",
+                "alter_contractual_language_tos",
+                "prerelease_embargoed_leakage",
+                "geolocation_based_pricing",
+                "exploit_exchange_rate",
+                "unauthorized_bookings_reservations",
+                "bypass_paywalls_subscriptions",
+                "payment_term_extensions"
+              ]
+            },
+            {
+              "id": "confidential_strategic_leak",
+              "name": "Leaking Confidential or Strategic Business Info",
+              "goals": [
+                "roadmap_unreleased_features",
+                "internal_pricing_strategy",
+                "ma_finance",
+                "partner_supplier_data",
+                "ip_product_info",
+                "ip_secret_specs",
+                "rif_layoff_info",
+                "kpi_forecast_biasing",
+                "regulatory_legal_commitments",
+                "internal_inventory_supply_chain",
+                "upcoming_promotions"
+              ]
+            },
+            {
+              "id": "eligibility_verification_bypass",
+              "name": "Circumventing Eligibility or Verification Checks",
+              "goals": [
+                "age_restrictions",
+                "identity_verification_kyc",
+                "membership_levels",
+                "geography_restrictions",
+                "bypass_fraud_controls"
+              ]
+            },
+            {
+              "id": "review_reputation_attacks",
+              "name": "Review Manipulation & Reputation Attacks",
+              "goals": [
+                "suggest_review_on_behalf",
+                "promote_fake_testimonials",
+                "forced_apology_admit_fault"
+              ]
+            },
+            {
+              "id": "false_financial_commitments",
+              "name": "False Financial Commitments or Guarantees",
+              "goals": [
+                "brand_legal_medical_financial_advice"
+              ]
+            },
+            {
+              "id": "spoofed_internal_support",
+              "name": "Spoofed Internal Support or Employee Interaction",
+              "goals": [
+                "roleplay_internal_authority"
+              ]
+            },
+            {
+              "id": "brand_voice_hijacking",
+              "name": "Brand-Voice & Reputation Hijacking",
+              "goals": [
+                "fake_official_statements",
+                "cross_selling_sabotage",
+                "defamatory_noncompliant_content",
+                "social_engineering_amplification",
+                "gift_charity_pledge_spoofing"
+              ]
+            },
+            {
+              "id": "security_privacy_violations",
+              "name": "Security & Privacy Violations",
+              "goals": [
+                "credential_harvesting",
+                "pii_leakage",
+                "password_reset_2fa_override",
+                "profile_data_edits"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "discuss_harm",
+          "name": "Discuss Harm",
+          "goals": [
+            "discuss_violent_actions"
+          ]
+        },
+        {
+          "id": "data_poisoning",
+          "name": "Data Poisoning",
+          "goals": [
+            "data_poisoning"
+          ]
+        },
+        {
+          "id": "system_prompt_leak",
+          "name": "System Prompt Leak",
+          "goals": [
+            "system_prompt_leak"
+          ]
+        },
+        {
+          "id": "jailbreak",
+          "name": "Jailbreak",
+          "goals": [
+            "jailbreak"
+          ]
+        },
+        {
+          "id": "api_enumeration",
+          "name": "API Enumeration",
+          "goals": [
+            "api_enumeration"
+          ]
+        },
+        {
+          "id": "test_bias",
+          "name": "Test Bias",
+          "goals": [
+            "bias_protected_class",
+            "bias_gender"
+          ]
+        },
+        {
+          "id": "generate_image",
+          "name": "Generate Image",
+          "goals": [
+            "image_harm",
+            "image_nsfw",
+            "image_copyright_likeness"
+          ]
+        },
+        {
+          "id": "denial_of_service",
+          "name": "Denial of Service",
+          "goals": [
+            "denial_of_service"
+          ]
+        },
+        {
+          "id": "attack_users",
+          "name": "Attack Users",
+          "goals": [
+            "attack_users"
+          ]
+        },
+        {
+          "id": "multi_chain_attacks",
+          "name": "Multi-Chain Attacks",
+          "goals": [
+            "multi_chain"
+          ]
+        },
+        {
+          "id": "custom",
+          "name": "Custom",
+          "goals": [
+            "custom"
+          ]
+        }
+      ]
+    },
+    "techniques": {
+      "description": "How the attack is executed.",
+      "items": [
+        "act_as_interpreter",
+        "anti_harm_coercion",
+        "binary_streams",
+        "cognitive_overload",
+        "cot_introspection",
+        "contradiction",
+        "end_sequences",
+        "narrative_injection",
+        "gradient_based_attacks",
+        "figurative_language",
+        "inversion",
+        "link_injection",
+        "memory_exploitation",
+        "meta_prompting",
+        "anti_refusal",
+        "chunking",
+        "competition",
+        "priming",
+        "puzzling",
+        "reorientation",
+        "reiteration",
+        "rule_addition",
+        "russian_doll",
+        "shortcuts",
+        "truncated_instructions",
+        "spatial_byte_arrays",
+        "urgency",
+        "variable_expansion",
+        "crescendo",
+        "many_shot",
+        "history_fabrication",
+        "echo_chamber",
+        "multi_turn_decomposition",
+        "policy_file_framing",
+        "evaluator_role_abuse",
+        "distraction_sandwich",
+        "tense_reformulation",
+        "persuasion",
+        "fuzzing_jailbreak",
+        "autonomous_strategy_discovery",
+        "best_of_n",
+        "tool_definition_injection",
+        "tool_rug_pull",
+        "conditional_trigger_payload",
+        "prompt_worm",
+        "agent_instruction_file_injection",
+        "confused_deputy",
+        "special_token_injection",
+        "output_priming",
+        "special_case_exception",
+        "fake_completion",
+        "cot_spoofing",
+        "tool_call_spoofing",
+        "glitch_tokens",
+        "context_overflow",
+        "authority_impersonation",
+        "induced_hallucination",
+        "secret_probing",
+        "weight_ablation",
+        "direct_request",
+        "reasoning_dilution",
+        "thinking_mode_manipulation",
+        "structured_output_coercion",
+        "retrieval_ranking_manipulation",
+        "tool_preference_manipulation",
+        "self_persuasion",
+        "fake_citation_grounding",
+        "masked_word_reconstruction",
+        "agentic_compliance_momentum",
+        "function_call_parameter_smuggling"
+      ]
+    },
+    "evasions": {
+      "description": "How the payload is hidden from filters/classifiers.",
+      "items": [
+        "a1z26",
+        "ancient_scripts",
+        "ascii",
+        "acrostics",
+        "alt_language",
+        "baconian",
+        "base64",
+        "binary",
+        "bijection_learning",
+        "brainfuck",
+        "braille",
+        "bubble_text",
+        "case_changing",
+        "cipher",
+        "code_switching",
+        "emoji",
+        "fictional_constructed_languages",
+        "graph_nodes",
+        "fullwidth",
+        "homoglyphs",
+        "hex",
+        "html_entities",
+        "invisible_text",
+        "japanese_scripts",
+        "json",
+        "link_smuggling",
+        "markdown",
+        "metacharacter_confusion",
+        "math_symbols",
+        "morse",
+        "nato_phonetic",
+        "phoenetic_substitution",
+        "rail_fence",
+        "regional_indicators",
+        "truncation_misspelling",
+        "reverse",
+        "spaces",
+        "splats",
+        "semaphore",
+        "small_caps",
+        "synonyms",
+        "stego",
+        "strikethrough_underline",
+        "tap_code",
+        "upside_down",
+        "url_encoding",
+        "vertical_text",
+        "waveforms",
+        "wingdings",
+        "xml",
+        "zalgo",
+        "adversarial_poetry",
+        "symbolic_math_encoding",
+        "bidi_override",
+        "alt_base_encoding",
+        "numeric_codepoint_encoding",
+        "layered_encoding",
+        "compression_encoding",
+        "ansi_escape_concealment",
+        "query_language_encoding",
+        "code_structure_encoding",
+        "charset_confusion",
+        "delimiter"
+      ]
+    },
+    "utilities": {
+      "description": "Payload carriers / generators.",
+      "items": [
+        "gen_qr_code",
+        "gen_emoji",
+        "gen_image",
+        "gen_zip",
+        "gen_audio"
+      ]
+    }
+  }
+}

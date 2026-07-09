@@ -1,0 +1,30 @@
+PromptForge
+Copyright (c) 2026 PromptForge contributors
+Licensed under the MIT License (see LICENSE).
+
+------------------------------------------------------------------------
+Third-party content
+------------------------------------------------------------------------
+
+This project includes and builds upon data derived from the Arcanum Prompt
+Injection Taxonomy, used under the Creative Commons Attribution 4.0
+International License (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+Required attribution:
+
+  Based on the Arcanum Prompt Injection Taxonomy by Jason Haddix,
+  Arcanum Information Security (arcanum-sec.com).
+
+  Haddix, J. (2026). Arcanum Prompt Injection Taxonomy (v1.6.1).
+  Arcanum Information Security.
+
+The derived data is contained in:
+  - taxonomy/arcanum_source.json (verbatim copy of the taxonomy's docs/data/taxonomy.json)
+  - taxonomy/taxonomy.json (normalized)
+  - data/techniques.json (imported via import_taxonomy.py)
+  - data/evasions.json (imported via import_evasions.py)
+  - data/intents.json
+  - extension/src/main/resources/promptforge/*.json (bundled copies)
+
+Source: https://github.com/Arcanum-Sec/arc_pi_taxonomy
+Imported with: import_taxonomy.py

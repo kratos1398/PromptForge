@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    // Produces a single fat JAR with all dependencies relocated, so the
+    // extension can be loaded into Burp without classpath conflicts.
+    // Maintained fork (handles Java 21+ bytecode in deps; works on Gradle 8.x).
+    id 'com.gradleup.shadow' version '8.3.6'
+}
+
+group = 'sec.promptforge'
+version = '0.1.0'
+
+java {
+    // Compile to Java 17 bytecode using whatever JDK 17+ runs the build
+    // (no toolchain auto-download required).
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Burp Montoya API — provided by Burp at runtime, so compileOnly.
+    compileOnly 'net.portswigger.burp.extensions:montoya-api:2026.4'
+
+    // Official Anthropic Java SDK — bundled into the fat JAR (shaded).
+    implementation 'com.anthropic:anthropic-java:2.44.1'
+
+    // JSON parsing for taxonomy resources + Claude output.
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.2'
+}
+
+shadowJar {
+    archiveClassifier.set('')
+    archiveBaseName.set('promptforge')
+    // Relocate the conflict-prone transitive libs so a different OkHttp/Jackson
+    // shipped by another loaded extension can't break us (and vice versa).
+    // The Anthropic SDK package itself is left in place — relocating it can
+    // break its internal class resolution.
+    relocate 'okhttp3', 'sec.promptforge.shaded.okhttp3'
+    relocate 'okio', 'sec.promptforge.shaded.okio'
+    relocate 'com.fasterxml.jackson', 'sec.promptforge.shaded.jackson'
+    mergeServiceFiles()
+}
+
+// `gradle build` should produce the loadable extension JAR.
+build.dependsOn shadowJar

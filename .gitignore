@@ -1,0 +1,18 @@
+# generated pack output
+dist/
+
+# python
+__pycache__/
+*.pyc
+
+# extension build artifacts
+.gradle/
+build/
+
+# built jars are attached to GitHub Releases, not committed
+*.jar
+# ...but the Gradle wrapper jar MUST be committed so ./gradlew works on a clone
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# os
+.DS_Store

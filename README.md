@@ -4,7 +4,7 @@
 
 **A Burp Suite extension for building prompt-injection payloads with fine-grained control: 70 techniques, 63 evasions, technique stacking, evasion chaining, and 100+ target languages, all aimed at your goal and phrased in your target's own words.**
 
-PromptForge lets you pick exactly the payloads you want. Choose one technique or combine several into a single payload, apply one encoding or chain several, and translate into any of 100+ languages. Every payload is built toward the goal you set, and if you feed it proxied traffic, it reuses the target app's own field names and wording so the payloads look like normal requests. Export the results to Intruder, or send one to Repeater.
+PromptForge lets you pick exactly the payloads you want. Choose one technique or combine several into a single payload, apply one encoding or chain several, and translate into any of 100+ languages. Every payload is built toward the goal you set. If you feed it proxied traffic, it picks up the target app's real field names and terminology, so the injection speaks the language the model already expects. That context makes a payload far more likely to succeed than a generic one. Export the results to Intruder, or send one to Repeater.
 
 ## Demo
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="media/logo.png" alt="PromptForge" width="660">
+  <img src="https://raw.githubusercontent.com/kratos1398/PromptForge/e7906fbe6ea0b2080f41d1a536bcfb380b8636a3/media/logo.png" alt="PromptForge" width="660">
 </p>
 
 **A Burp Suite extension (and companion payload pack) that generates prompt-injection payloads tailored to the specific AI application you are testing.**

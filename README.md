@@ -181,6 +181,15 @@ Payloads are built as a pipeline: **evasion( language( technique ) )** - generat
 - **Export prompts (.txt).** Writes just the payload text, one per line, ready to load into a Burp Intruder simple list and mark with payload position markers.
 - **Send to Repeater / Intruder.** Substitutes the selected payload into the target request at the chosen injection point (JSON, multipart, form, query, or a manually-marked literal) and sends it. A self-check reports whether the request actually changed, so a mismatched injection point is obvious.
 
+### Technique and evasion reference
+
+Two browsable reference tabs sit alongside your sessions, so you can look up any technique or evasion without leaving Burp:
+
+- **Technique reference** - a searchable list of all 70 techniques. Pick one to read what it is, why it works (the mechanism that actually makes a model comply), and concrete examples.
+- **Evasion reference** - the same for all 63 evasions (encodings, alternate languages, and other obfuscations), including how each one is applied (local encoder, model-generated, or non-text carrier).
+
+They double as a quick way to learn the taxonomy and to decide which techniques and evasions to reach for before you generate.
+
 ### Sessions
 
 - Multiple session tabs (like Intruder), each with its own target, corpus, and results. Provider settings (key, model, base URL) are shared across sessions.

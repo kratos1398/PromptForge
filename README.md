@@ -1,4 +1,6 @@
-# PromptForge
+<p align="center">
+  <img src="media/logo.png" alt="PromptForge" width="660">
+</p>
 
 **A Burp Suite extension (and companion payload pack) that generates prompt-injection payloads tailored to the specific AI application you are testing.**
 

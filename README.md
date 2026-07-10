@@ -4,10 +4,17 @@
 
 PromptForge learns a target app's own vocabulary from real proxied traffic and uses an LLM to re-skin a broad set of prompt-injection techniques into payloads that speak that application's language. It then hands those payloads to Burp Intruder/Repeater for hands-on testing.
 
+## Demo
+
+[![PromptForge demo - click to play](media/demo-poster.jpg)](https://github.com/kratos1398/PromptForge/blob/main/media/demo.mp4)
+
+A short walkthrough: ingesting traffic, marking an injection point, picking techniques/evasions, and generating payloads. Click the image to play, or [open the video directly](https://github.com/kratos1398/PromptForge/blob/main/media/demo.mp4).
+
 ---
 
 ## Contents
 
+- [Demo](#demo)
 - [Purpose](#purpose)
 - [Why it exists (the gap it fills)](#why-it-exists-the-gap-it-fills)
 - [How it relates to Promptfoo, Garak, and PyRIT](#how-it-relates-to-promptfoo-garak-and-pyrit)

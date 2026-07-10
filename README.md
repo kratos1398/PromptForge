@@ -6,9 +6,9 @@ PromptForge learns a target app's own vocabulary from real proxied traffic and u
 
 ## Demo
 
-[![PromptForge demo - click to play](media/demo-poster.jpg)](https://github.com/kratos1398/PromptForge/blob/main/media/demo.mp4)
+![PromptForge demo](media/demo.gif)
 
-A short walkthrough: ingesting traffic, marking an injection point, picking techniques/evasions, and generating payloads. Click the image to play, or [open the video directly](https://github.com/kratos1398/PromptForge/blob/main/media/demo.mp4).
+A short walkthrough: ingesting traffic, marking an injection point, picking techniques/evasions, and generating payloads. ([Full-quality video](https://github.com/kratos1398/PromptForge/blob/main/media/demo.mp4).)
 
 ---
 

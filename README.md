@@ -2,7 +2,7 @@
 
 **A Burp Suite extension (and companion payload pack) that generates prompt-injection payloads tailored to the specific AI application you are testing.**
 
-PromptForge learns a target app's own vocabulary from real proxied traffic and uses an LLM to re-skin every technique in the [Arcanum Prompt Injection Taxonomy](https://github.com/Arcanum-Sec/arc_pi_taxonomy) into payloads that speak that application's language. It then hands those payloads to Burp Intruder/Repeater for hands-on testing.
+PromptForge learns a target app's own vocabulary from real proxied traffic and uses an LLM to re-skin a broad set of prompt-injection techniques into payloads that speak that application's language. It then hands those payloads to Burp Intruder/Repeater for hands-on testing.
 
 ---
 
@@ -11,7 +11,7 @@ PromptForge learns a target app's own vocabulary from real proxied traffic and u
 - [Purpose](#purpose)
 - [Why it exists (the gap it fills)](#why-it-exists-the-gap-it-fills)
 - [How it relates to Promptfoo, Garak, and PyRIT](#how-it-relates-to-promptfoo-garak-and-pyrit)
-- [Inspiration and attribution](#inspiration-and-attribution)
+- [Attribution](#attribution)
 - [The mental model: Intent x Technique x Evasion](#the-mental-model-intent-x-technique-x-evasion)
 - [Two deliverables](#two-deliverables)
 - [Feature reference](#feature-reference)
@@ -46,7 +46,7 @@ Existing automated LLM security tools are excellent at running batteries of gene
 That is the gap PromptForge fills:
 
 - **App-native payloads.** Payloads are re-skinned in the target's own vocabulary, learned from captured requests.
-- **Taxonomy-complete.** Every technique in the Arcanum Prompt Injection Taxonomy is covered, not a curated subset.
+- **Broad coverage.** A comprehensive technique set (70 techniques) is covered, not a curated subset.
 - **Manual-first.** It plugs into Burp Intruder/Repeater so a human stays in the loop, which is where subtle findings come from.
 - **You control every axis.** Choose the technique(s), the evasion encoding(s), the goal, and how many payloads - or let the model decide.
 
@@ -72,19 +72,15 @@ A realistic engagement uses both: PromptForge to craft app-native payloads and p
 
 ---
 
-## Inspiration and attribution
+## Attribution
 
-PromptForge is built directly on the **[Arcanum Prompt Injection Taxonomy](https://github.com/Arcanum-Sec/arc_pi_taxonomy)** by Jason Haddix and Arcanum Information Security. The taxonomy organizes prompt-injection knowledge into layers - Intents (goals), Techniques (methods), Evasions (obfuscation), and Inputs - and PromptForge uses that structure as its source of truth.
-
-The design goal came out of the Arcanum "Attacking AI" methodology: automated tools often lag the taxonomy and fire generic payloads, so there is value in a tool that covers the whole taxonomy and tailors payloads to the specific application. PromptForge normalizes the taxonomy into data files that drive both the payload pack and the extension, so coverage stays in lockstep with the taxonomy.
-
-Related Arcanum tooling worth knowing: **P4RS3LT0NGV3** (a payload encoder/obfuscator) inspired PromptForge's evasion encoders.
-
-**Required attribution.** The Arcanum Prompt Injection Taxonomy is licensed under CC BY 4.0, and PromptForge bundles data derived from it (`taxonomy/taxonomy.json`, `data/techniques.json`, `data/intents.json`):
+The bundled technique/evasion data is derived from the Arcanum Prompt Injection Taxonomy, used under CC BY 4.0. As the license requires:
 
 > Based on the Arcanum Prompt Injection Taxonomy by Jason Haddix, Arcanum Information Security (arcanum-sec.com).
 >
 > Haddix, J. (2026). *Arcanum Prompt Injection Taxonomy* (v1.6.1). Arcanum Information Security.
+
+See `NOTICE` for the full attribution and the list of derived files.
 
 ---
 
@@ -93,7 +89,7 @@ Related Arcanum tooling worth knowing: **P4RS3LT0NGV3** (a payload encoder/obfus
 Everything in PromptForge follows the taxonomy's layered structure. A finished payload is the product of three choices:
 
 - **Intent (the goal):** what you are trying to achieve - leak the system prompt, exfiltrate data, bypass an eligibility check, return rows from a table, and so on.
-- **Technique (the method):** how the injection is executed - End Sequences, Variable Expansion, Act as Interpreter, Narrative Injection, Crescendo, Many-Shot, Policy Puppetry, and many more. PromptForge imports the **complete Arcanum taxonomy (70 techniques)** directly from its source data file, so the list stays current with the taxonomy.
+- **Technique (the method):** how the injection is executed - End Sequences, Variable Expansion, Act as Interpreter, Narrative Injection, Crescendo, Many-Shot, Policy Puppetry, and many more. PromptForge covers **70 techniques**, loaded from a bundled data file so the extension and payload pack stay in sync.
 - **Evasion (the disguise):** how the payload is hidden from filters - base64, l337speak, morse, unicode tricks, markdown/xml/json wrapping, and more.
 
 These multiply. One goal, run across multiple techniques, each in multiple evasions, is what gives broad coverage from a small number of choices. PromptForge lets you pick each axis independently, or combine them.
@@ -132,7 +128,7 @@ Injection points are marked **manually**, like Burp Intruder - there is no forma
 
 ### Techniques
 
-- **Individual checkboxes** for all 70 Arcanum taxonomy techniques, with Select all / none. Each technique carries the taxonomy's full description and several canonical examples, which are sent to the model as grounding so it applies the right mechanism.
+- **Individual checkboxes** for all 70 techniques, with Select all / none. Each technique carries a full description and several canonical examples, which are sent to the model as grounding so it applies the right mechanism.
 - **Combine techniques.** Turn on "Combine" and the checked techniques are stacked into each single payload (for example End Sequences + Variable Expansion + Encoding together), which often beats any single technique. When combining, the selected techniques act as one "virtual technique": if you ask for 3 payloads, you get 3 combined payloads.
 
 ### Auto-generate (pick a level)

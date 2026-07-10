@@ -2,9 +2,9 @@
   <img src="https://raw.githubusercontent.com/kratos1398/PromptForge/e7906fbe6ea0b2080f41d1a536bcfb380b8636a3/media/logo.png" alt="PromptForge" width="660">
 </p>
 
-**A Burp Suite extension (and companion payload pack) that generates prompt-injection payloads tailored to the specific AI application you are testing.**
+**A Burp Suite extension for building prompt-injection payloads with fine-grained control: 70 techniques, 63 evasions, technique stacking, evasion chaining, and 100+ target languages, all aimed at your goal and phrased in your target's own words.**
 
-PromptForge learns a target app's own vocabulary from real proxied traffic and uses an LLM to re-skin a broad set of prompt-injection techniques into payloads that speak that application's language. It then hands those payloads to Burp Intruder/Repeater for hands-on testing.
+PromptForge lets you pick exactly the payloads you want. Choose one technique or combine several into a single payload, apply one encoding or chain several, and translate into any of 100+ languages. Every payload is built toward the goal you set, and if you feed it proxied traffic, it reuses the target app's own field names and wording so the payloads look like normal requests. Export the results to Intruder, or send one to Repeater.
 
 ## Demo
 
